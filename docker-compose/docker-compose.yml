@@ -1,17 +1,15 @@
-version: '3'
-
 services:
-  dev:
+  bert-vits2:
     build:
       context: ../Dockerfile
       dockerfile: Dockerfile
-    image: style-bert-vits2:2.2
+    image: style-bert-vits2:2.6.0
     container_name: style-bert-vits2
     working_dir: /Style-Bert-VITS2
     tty: true
     ports:
       - "7860:7860"
-    entrypoint: sh -c "python app.py --server-name 0.0.0.0"
+    entrypoint: sh -c "python app.py --host 0.0.0.0"
 
     deploy:
       resources:
